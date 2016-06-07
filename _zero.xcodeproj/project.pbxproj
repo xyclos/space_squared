@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E13DF8401CC6C001000AC939 /* CGMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DF83F1CC6C001000AC939 /* CGMath.swift */; };
 		E15A0BB41CC5567000C9E655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A0BB31CC5567000C9E655 /* AppDelegate.swift */; };
 		E15A0BB61CC5567000C9E655 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BB51CC5567000C9E655 /* GameScene.sks */; };
 		E15A0BB81CC5567000C9E655 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A0BB71CC5567000C9E655 /* GameScene.swift */; };
@@ -14,9 +15,20 @@
 		E15A0BBD1CC5567000C9E655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BBB1CC5567000C9E655 /* Main.storyboard */; };
 		E15A0BBF1CC5567000C9E655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BBE1CC5567000C9E655 /* Assets.xcassets */; };
 		E15A0BC21CC5567000C9E655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BC01CC5567000C9E655 /* LaunchScreen.storyboard */; };
+		E15A0BCC1CC557A700C9E655 /* Fipps-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BCB1CC5579100C9E655 /* Fipps-Regular.otf */; };
+		E15A0BD01CC5598A00C9E655 /* StarField.sks in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BCE1CC5598A00C9E655 /* StarField.sks */; };
+		E15A0BD11CC5598A00C9E655 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BCF1CC5598A00C9E655 /* spark.png */; };
+		E1B89C771D0749CE002AB406 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B89C761D0749CE002AB406 /* SKNode.swift */; };
+		E1F559081CC66391005D2A4B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F559071CC66391005D2A4B /* Hero.swift */; };
+		E1F5590A1CC6746C005D2A4B /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F559091CC6746C005D2A4B /* Direction.swift */; };
+		E1F5590E1CC68709005D2A4B /* CategoryBitMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5590D1CC68709005D2A4B /* CategoryBitMasks.swift */; };
+		E1F559101CC688EA005D2A4B /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5590F1CC688EA005D2A4B /* Coin.swift */; };
+		E1F559121CC688FF005D2A4B /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F559111CC688FF005D2A4B /* Projectile.swift */; };
+		E1F559141CC6A680005D2A4B /* DestroyCoin.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1F559131CC6A680005D2A4B /* DestroyCoin.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E13DF83F1CC6C001000AC939 /* CGMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGMath.swift; sourceTree = "<group>"; };
 		E15A0BB01CC5567000C9E655 /* _zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = _zero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15A0BB31CC5567000C9E655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E15A0BB51CC5567000C9E655 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -26,6 +38,16 @@
 		E15A0BBE1CC5567000C9E655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E15A0BC11CC5567000C9E655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E15A0BC31CC5567000C9E655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E15A0BCB1CC5579100C9E655 /* Fipps-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fipps-Regular.otf"; sourceTree = "<group>"; };
+		E15A0BCE1CC5598A00C9E655 /* StarField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarField.sks; sourceTree = "<group>"; };
+		E15A0BCF1CC5598A00C9E655 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		E1B89C761D0749CE002AB406 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
+		E1F559071CC66391005D2A4B /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		E1F559091CC6746C005D2A4B /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		E1F5590D1CC68709005D2A4B /* CategoryBitMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryBitMasks.swift; sourceTree = "<group>"; };
+		E1F5590F1CC688EA005D2A4B /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		E1F559111CC688FF005D2A4B /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
+		E1F559131CC6A680005D2A4B /* DestroyCoin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DestroyCoin.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13DF83E1CC6BFEF000AC939 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E13DF83F1CC6C001000AC939 /* CGMath.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		E15A0BA71CC5567000C9E655 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +88,8 @@
 		E15A0BB21CC5567000C9E655 /* _zero */ = {
 			isa = PBXGroup;
 			children = (
+				E15A0BC91CC5577800C9E655 /* resources */,
+				E1F559061CC6636F005D2A4B /* classes */,
 				E15A0BB31CC5567000C9E655 /* AppDelegate.swift */,
 				E15A0BB51CC5567000C9E655 /* GameScene.sks */,
 				E15A0BB71CC5567000C9E655 /* GameScene.swift */,
@@ -68,6 +100,47 @@
 				E15A0BC31CC5567000C9E655 /* Info.plist */,
 			);
 			path = _zero;
+			sourceTree = "<group>";
+		};
+		E15A0BC91CC5577800C9E655 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E13DF83E1CC6BFEF000AC939 /* utils */,
+				E15A0BCD1CC5593F00C9E655 /* particles */,
+				E15A0BCA1CC5578500C9E655 /* fonts */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		E15A0BCA1CC5578500C9E655 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E15A0BCB1CC5579100C9E655 /* Fipps-Regular.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		E15A0BCD1CC5593F00C9E655 /* particles */ = {
+			isa = PBXGroup;
+			children = (
+				E15A0BCE1CC5598A00C9E655 /* StarField.sks */,
+				E15A0BCF1CC5598A00C9E655 /* spark.png */,
+				E1F559131CC6A680005D2A4B /* DestroyCoin.sks */,
+			);
+			name = particles;
+			sourceTree = "<group>";
+		};
+		E1F559061CC6636F005D2A4B /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				E1F559071CC66391005D2A4B /* Hero.swift */,
+				E1F559091CC6746C005D2A4B /* Direction.swift */,
+				E1F5590D1CC68709005D2A4B /* CategoryBitMasks.swift */,
+				E1F5590F1CC688EA005D2A4B /* Coin.swift */,
+				E1F559111CC688FF005D2A4B /* Projectile.swift */,
+				E1B89C761D0749CE002AB406 /* SKNode.swift */,
+			);
+			name = classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +202,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15A0BD01CC5598A00C9E655 /* StarField.sks in Resources */,
+				E1F559141CC6A680005D2A4B /* DestroyCoin.sks in Resources */,
 				E15A0BB61CC5567000C9E655 /* GameScene.sks in Resources */,
 				E15A0BC21CC5567000C9E655 /* LaunchScreen.storyboard in Resources */,
+				E15A0BD11CC5598A00C9E655 /* spark.png in Resources */,
+				E15A0BCC1CC557A700C9E655 /* Fipps-Regular.otf in Resources */,
 				E15A0BBF1CC5567000C9E655 /* Assets.xcassets in Resources */,
 				E15A0BBD1CC5567000C9E655 /* Main.storyboard in Resources */,
 			);
@@ -146,6 +223,13 @@
 				E15A0BB81CC5567000C9E655 /* GameScene.swift in Sources */,
 				E15A0BBA1CC5567000C9E655 /* GameViewController.swift in Sources */,
 				E15A0BB41CC5567000C9E655 /* AppDelegate.swift in Sources */,
+				E1F5590A1CC6746C005D2A4B /* Direction.swift in Sources */,
+				E1F559121CC688FF005D2A4B /* Projectile.swift in Sources */,
+				E1B89C771D0749CE002AB406 /* SKNode.swift in Sources */,
+				E1F559081CC66391005D2A4B /* Hero.swift in Sources */,
+				E1F5590E1CC68709005D2A4B /* CategoryBitMasks.swift in Sources */,
+				E1F559101CC688EA005D2A4B /* Coin.swift in Sources */,
+				E13DF8401CC6C001000AC939 /* CGMath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +381,7 @@
 				E15A0BC81CC5567000C9E655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
