@@ -29,6 +29,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let titleLabel = SKLabelNode(fontNamed:"Fipps-Regular")
     let playLabel = SKLabelNode(fontNamed: "Fipps-Regular")
     var scoreLabel = SKLabelNode(fontNamed: "Fipps-Regular")
+    let hintLabel1 = SKLabelNode(fontNamed: "Fipps-Regular")
+    let hintLabel2 = SKLabelNode(fontNamed: "Fipps-Regular")
+    let hintLabel3 = SKLabelNode(fontNamed: "Fipps-Regular")
+    
+    let damage = SKAction.playSoundFileNamed("damage.wav", waitForCompletion: false)
+    let coin = SKAction.playSoundFileNamed("coin.wav", waitForCompletion: false)
+    let backgroundMusic = SKAction.repeatActionForever(SKAction.playSoundFileNamed("background.wav", waitForCompletion: true))
     
     var menuGroup = SKNode()
     
@@ -73,6 +80,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(starField)
         }
         
+        playSound(backgroundMusic)
+        
         buildMenu()
     }
     
@@ -109,18 +118,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let contactMask = contact.bodyA.categoryBitMask & contact.bodyB.categoryBitMask
             switch contactMask {
             case CategoryBitMasks.Projectile:
+                score = 0
                 _hero!.shake(3)
                 playField.shake(3)
-                score = 0
+                playSound(damage)
                 break
             case CategoryBitMasks.Coin:
                 _coin!.explode()
+                playSound(coin)
                 _coin!.respawn()
                 score += 1
                 break
             default: break
             }
         }
+    }
+    
+    func playSound(sound : SKAction) {
+        runAction(sound)
     }
     
     func buildMenu() {
@@ -138,6 +153,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         menuGroup.addChild(playLabel)
         
         addChild(menuGroup)
+        
+        hintLabel1.text = "Swipe to move"
+        hintLabel1.fontSize = 10
+        hintLabel1.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 170)
+        hintLabel1.alpha = 0.0
+        
+        hintLabel2.text = "Collect the yellow coins"
+        hintLabel2.fontSize = 10
+        hintLabel2.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 190)
+        hintLabel2.alpha = 0.0
+        
+        hintLabel3.text = "Avoid the red enemies"
+        hintLabel3.fontSize = 10
+        hintLabel3.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 210)
+        hintLabel3.alpha = 0.0
+        
+        addChild(hintLabel1)
+        addChild(hintLabel2)
+        addChild(hintLabel3)
     }
     
     func hideMenu() {
@@ -148,6 +182,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let menuSequence = SKAction.group([fadeOutAction, moveDownAction])
         
         menuGroup.runAction(menuSequence)
+        
+        let hintsSequence = SKAction.group([fadeInAction2])
+        
+        hintLabel1.runAction(hintsSequence)
+        hintLabel2.runAction(hintsSequence)
+        hintLabel3.runAction(hintsSequence)
         
         currentMode = Mode.Play
     }

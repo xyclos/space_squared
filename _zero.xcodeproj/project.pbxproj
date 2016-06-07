@@ -19,6 +19,9 @@
 		E15A0BD01CC5598A00C9E655 /* StarField.sks in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BCE1CC5598A00C9E655 /* StarField.sks */; };
 		E15A0BD11CC5598A00C9E655 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E15A0BCF1CC5598A00C9E655 /* spark.png */; };
 		E1B89C771D0749CE002AB406 /* SKNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B89C761D0749CE002AB406 /* SKNode.swift */; };
+		E1B89C7A1D074DC7002AB406 /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B89C791D074DC7002AB406 /* coin.wav */; };
+		E1B89C7C1D074E24002AB406 /* damage.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B89C7B1D074E24002AB406 /* damage.wav */; };
+		E1B89C7E1D075070002AB406 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B89C7D1D075070002AB406 /* background.wav */; };
 		E1F559081CC66391005D2A4B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F559071CC66391005D2A4B /* Hero.swift */; };
 		E1F5590A1CC6746C005D2A4B /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F559091CC6746C005D2A4B /* Direction.swift */; };
 		E1F5590E1CC68709005D2A4B /* CategoryBitMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5590D1CC68709005D2A4B /* CategoryBitMasks.swift */; };
@@ -42,6 +45,9 @@
 		E15A0BCE1CC5598A00C9E655 /* StarField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarField.sks; sourceTree = "<group>"; };
 		E15A0BCF1CC5598A00C9E655 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		E1B89C761D0749CE002AB406 /* SKNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNode.swift; sourceTree = "<group>"; };
+		E1B89C791D074DC7002AB406 /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		E1B89C7B1D074E24002AB406 /* damage.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = damage.wav; sourceTree = "<group>"; };
+		E1B89C7D1D075070002AB406 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
 		E1F559071CC66391005D2A4B /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		E1F559091CC6746C005D2A4B /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		E1F5590D1CC68709005D2A4B /* CategoryBitMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryBitMasks.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 		E15A0BC91CC5577800C9E655 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				E1B89C781D074DB1002AB406 /* sounds */,
 				E13DF83E1CC6BFEF000AC939 /* utils */,
 				E15A0BCD1CC5593F00C9E655 /* particles */,
 				E15A0BCA1CC5578500C9E655 /* fonts */,
@@ -128,6 +135,16 @@
 				E1F559131CC6A680005D2A4B /* DestroyCoin.sks */,
 			);
 			name = particles;
+			sourceTree = "<group>";
+		};
+		E1B89C781D074DB1002AB406 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E1B89C7B1D074E24002AB406 /* damage.wav */,
+				E1B89C7D1D075070002AB406 /* background.wav */,
+				E1B89C791D074DC7002AB406 /* coin.wav */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 		E1F559061CC6636F005D2A4B /* classes */ = {
@@ -205,9 +222,12 @@
 				E15A0BD01CC5598A00C9E655 /* StarField.sks in Resources */,
 				E1F559141CC6A680005D2A4B /* DestroyCoin.sks in Resources */,
 				E15A0BB61CC5567000C9E655 /* GameScene.sks in Resources */,
+				E1B89C7C1D074E24002AB406 /* damage.wav in Resources */,
 				E15A0BC21CC5567000C9E655 /* LaunchScreen.storyboard in Resources */,
 				E15A0BD11CC5598A00C9E655 /* spark.png in Resources */,
 				E15A0BCC1CC557A700C9E655 /* Fipps-Regular.otf in Resources */,
+				E1B89C7A1D074DC7002AB406 /* coin.wav in Resources */,
+				E1B89C7E1D075070002AB406 /* background.wav in Resources */,
 				E15A0BBF1CC5567000C9E655 /* Assets.xcassets in Resources */,
 				E15A0BBD1CC5567000C9E655 /* Main.storyboard in Resources */,
 			);
