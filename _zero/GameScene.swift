@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     var currentMode = Mode.Default
+    var actionHasStarted = false
     
     var score: Int = 0 {
         didSet {
@@ -80,6 +81,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(starField)
         }
         
+        let camera = SKCameraNode()
+        camera.name = "camera"
+        self.camera = camera
+        
         playSound(backgroundMusic)
         
         buildMenu()
@@ -108,10 +113,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             showPlayField()
         } else if currentMode == Mode.Action {
             spawnEnemies()
+            actionHasStarted = true
         }
     }
     
-    
+    func shake() {
+        let moveX1 = SKAction.moveBy(CGVectorMake(-7 ,0), duration: 0.05)
+        let moveX2 = SKAction.moveBy(CGVectorMake(-10 ,0), duration: 0.05)
+        let moveX3 = SKAction.moveBy(CGVectorMake(7 ,0), duration: 0.05)
+        let moveX4 = SKAction.moveBy(CGVectorMake(10 ,0), duration: 0.05)
+        
+        let moveY1 = SKAction.moveBy(CGVectorMake(0, -7), duration: 0.05)
+        let moveY2 = SKAction.moveBy(CGVectorMake(0, -10), duration: 0.05)
+        let moveY3 = SKAction.moveBy(CGVectorMake(0, 7), duration: 0.05)
+        let moveY4 = SKAction.moveBy(CGVectorMake(0, 10), duration: 0.05)
+        
+        let trembleX = SKAction.sequence([moveX1, moveX4, moveX2, moveX3])
+        let trembleY = SKAction.sequence([moveY1, moveY4, moveY2, moveY3])
+        
+        let nonHeroChildren = self.children.filter({ $0.name != "hero" })
+        
+        for child in nonHeroChildren {
+            child.runAction(trembleX)
+            child.runAction(trembleY)
+        }
+    }
     
     func didBeginContact(contact: SKPhysicsContact) {
         if contact.bodyA.categoryBitMask != contact.bodyB.categoryBitMask {
@@ -119,9 +145,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             switch contactMask {
             case CategoryBitMasks.Projectile:
                 score = 0
-                _hero!.shake(3)
-                playField.shake(3)
                 playSound(damage)
+                shake()
                 break
             case CategoryBitMasks.Coin:
                 _coin!.explode()
@@ -140,13 +165,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func buildMenu() {
         titleLabel.text = "_zero"
-        titleLabel.fontSize = 25
+        titleLabel.fontSize = 30
         titleLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
         addChild(titleLabel)
         
         playLabel.text = "play"
-        playLabel.fontSize = 10
+        playLabel.fontSize = 15
         playLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 100)
         playLabel.name = "play"
         
@@ -236,7 +261,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateScore(score: Int) {
         scoreLabel.text = "\(score)"
         
-        if score == 1 {
+        if score == 1 && !actionHasStarted {
             currentMode = Mode.Action
         }
     }
@@ -261,19 +286,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func swipedRight(sender:UISwipeGestureRecognizer){
-        _hero!.move(.Right)
+        guard let hero = _hero else {return}
+        hero.move(.Right)
     }
     
     func swipedLeft(sender:UISwipeGestureRecognizer){
-        _hero!.move(.Left)
+        guard let hero = _hero else {return}
+        hero.move(.Left)
     }
     
     func swipedUp(sender:UISwipeGestureRecognizer){
-        _hero!.move(.Up)
+        guard let hero = _hero else {return}
+        hero.move(.Up)
     }
     
     func swipedDown(sender:UISwipeGestureRecognizer){
-        _hero!.move(.Down)
+        guard let hero = _hero else {return}
+        hero.move(.Down)
     }
     
     func randomIndexFromTuple<C>(tuple:C) -> Int {

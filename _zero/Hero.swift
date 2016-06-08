@@ -16,6 +16,7 @@ class Hero: SKSpriteNode {
         
         super.init(texture: nil, color: color, size: size)
         
+        name = "hero"
         position = CGPoint(x:CGRectGetMidX(_scene.frame) - frame.size.width - 8*3, y:CGRectGetMidY(_scene.frame))
         zPosition = -800
         name = "hero"
