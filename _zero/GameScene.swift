@@ -34,6 +34,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let hintLabel2 = SKLabelNode(fontNamed: "Fipps-Regular")
     let hintLabel3 = SKLabelNode(fontNamed: "Fipps-Regular")
     
+    let settingsNode = SKSpriteNode(imageNamed: "Menu")
+    
     let damage = SKAction.playSoundFileNamed("damage.wav", waitForCompletion: false)
     let coin = SKAction.playSoundFileNamed("coin.wav", waitForCompletion: false)
     let backgroundMusic = SKAction.repeatActionForever(SKAction.playSoundFileNamed("background.wav", waitForCompletion: true))
@@ -80,10 +82,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             starField.zPosition = -1000
             addChild(starField)
         }
-        
-        let camera = SKCameraNode()
-        camera.name = "camera"
-        self.camera = camera
         
         playSound(backgroundMusic)
         
@@ -197,6 +195,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(hintLabel1)
         addChild(hintLabel2)
         addChild(hintLabel3)
+        
+        settingsNode.position = CGPointMake(100, 100)
+        addChild(settingsNode);
     }
     
     func hideMenu() {
@@ -252,10 +253,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         _coin!.alpha = 0
         addChild(_coin!)
         _coin!.runAction(fadeInAction2)
-        
-//        let testEnemy = Projectile(color: SKColor.redColor(), size: CGSize(width: 20, height: 20), scene: self)
-//        testEnemy.position = CGPoint(x: self.frame.width + 8*3, y: CGRectGetMidY(self.frame))
-//        addChild(testEnemy)
     }
     
     func updateScore(score: Int) {
@@ -269,7 +266,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnEnemies() {
         let baseDelay = 5
         let delay = Double(max(baseDelay*self.score/score, baseDelay))
-//        let delay = 1.0
         let wait = SKAction.waitForDuration(delay)
         let run = SKAction.runBlock({
             let enemy = Projectile(color: SKColor.redColor(), size: CGSize(width: 20, height: 20), scene: self)

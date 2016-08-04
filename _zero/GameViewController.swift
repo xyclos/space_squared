@@ -13,13 +13,6 @@ import GoogleMobileAds
 class GameViewController: UIViewController, GADBannerViewDelegate {
     
     var adBannerView: GADBannerView!
-    
-    enum UIUserInterfaceIdiom : Int {
-        case Unspecified
-        
-        case Phone
-        case Pad
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +26,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = false
             
-            /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
-            scene.camera = SKCameraNode()
             
             skView.presentScene(scene)
         }
@@ -57,15 +48,11 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     }
 
     override func shouldAutorotate() -> Bool {
-        return true
+        return false
     }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
-        } else {
-            return .All
-        }
+        return .Portrait
     }
 
     override func didReceiveMemoryWarning() {
