@@ -26,15 +26,15 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = false
             
-            scene.scaleMode = .AspectFill
+            scene.scaleMode = .aspectFill
             
             skView.presentScene(scene)
         }
         
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(100), origin: CGPointMake(0, CGRectGetMaxY(self.view.frame) - 100))
-        } else if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(50), origin: CGPointMake(0, CGRectGetMaxY(self.view.frame) - 50))
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(100), origin: CGPoint(x: 0, y: self.view.frame.maxY - 100))
+        } else if UIDevice.current.userInterfaceIdiom == .phone {
+            adBannerView = GADBannerView(adSize: GADAdSizeFullWidthPortraitWithHeight(50), origin: CGPoint(x: 0, y: self.view.frame.maxY - 50))
         }
         
         adBannerView.delegate = self
@@ -43,16 +43,16 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         
         let reqAd = GADRequest()
         reqAd.testDevices = [kGADSimulatorID]
-        adBannerView.loadRequest(reqAd)
+        adBannerView.load(reqAd)
         self.view.addSubview(adBannerView)
     }
 
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .portrait
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +60,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
 }

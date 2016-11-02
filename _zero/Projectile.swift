@@ -16,7 +16,7 @@ class Projectile: SKSpriteNode {
         
         super.init(texture: nil, color: color, size: size)
         
-        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody!.affectedByGravity = false
         physicsBody!.categoryBitMask = CategoryBitMasks.Projectile
         physicsBody!.contactTestBitMask = CategoryBitMasks.Hero
@@ -28,8 +28,8 @@ class Projectile: SKSpriteNode {
     }
     
     func randomOpposingPositions() -> (CGPoint, CGPoint) {
-        let midX = CGRectGetMidX(_scene.frame)
-        let midY = CGRectGetMidY(_scene.frame)
+        let midX = _scene.frame.midX
+        let midY = _scene.frame.midY
         let height = frame.size.height
         let width = frame.size.width
         var positions = [(CGPoint,CGPoint)]()
@@ -52,6 +52,6 @@ class Projectile: SKSpriteNode {
     }
     
     func explode() {
-        runAction(SKAction.fadeOutWithDuration(0.1))
+        run(SKAction.fadeOut(withDuration: 0.1))
     }
 }

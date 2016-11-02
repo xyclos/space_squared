@@ -20,8 +20,8 @@ class GameOverScene: SKScene {
         return SKLabelNode(fontNamed: self.fontName)
     }
     
-    override func didMoveToView(view: SKView) {
-        self.backgroundColor = SKColor.blackColor()
+    override func didMove(to view: SKView) {
+        self.backgroundColor = SKColor.black
         self.alpha = 0.75
         
         buildMenu()
@@ -30,7 +30,7 @@ class GameOverScene: SKScene {
     func buildMenu() {
         retryLabel.text = "Retry"
         retryLabel.fontSize = 40
-        retryLabel.position = CGPointMake(CGRectGetMidX(self.frame), 25.0)
+        retryLabel.position = CGPoint(x: self.frame.midX, y: 25.0)
         
         addChild(retryLabel)
     }

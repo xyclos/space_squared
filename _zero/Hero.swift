@@ -17,10 +17,10 @@ class Hero: SKSpriteNode {
         super.init(texture: nil, color: color, size: size)
         
         name = "hero"
-        position = CGPoint(x:CGRectGetMidX(_scene.frame) - frame.size.width - 8*3, y:CGRectGetMidY(_scene.frame))
+        position = CGPoint(x:_scene.frame.midX - frame.size.width - 8*3, y:_scene.frame.midY)
         zPosition = -800
         name = "hero"
-        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody!.affectedByGravity = false
         physicsBody!.categoryBitMask = CategoryBitMasks.Hero
         physicsBody!.contactTestBitMask = CategoryBitMasks.Coin | CategoryBitMasks.Projectile
@@ -31,20 +31,20 @@ class Hero: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func move(direction: Direction) {
+    func move(_ direction: Direction) {
         var newPosition = position
-        if direction == .Right {
-            newPosition = CGPointMake(position.x + frame.size.width + 8*3, position.y)
-        } else if direction == .Left {
-            newPosition = CGPointMake(position.x - frame.size.width - 8*3, position.y)
-        } else if direction == .Up {
-            newPosition = CGPointMake(position.x, position.y + frame.size.height + 8*3)
-        } else if direction == .Down {
-            newPosition = CGPointMake(position.x, position.y - frame.size.height - 8*3)
+        if direction == .right {
+            newPosition = CGPoint(x: position.x + frame.size.width + 8*3, y: position.y)
+        } else if direction == .left {
+            newPosition = CGPoint(x: position.x - frame.size.width - 8*3, y: position.y)
+        } else if direction == .up {
+            newPosition = CGPoint(x: position.x, y: position.y + frame.size.height + 8*3)
+        } else if direction == .down {
+            newPosition = CGPoint(x: position.x, y: position.y - frame.size.height - 8*3)
         }
         
-        if CGRectContainsPoint(_scene.playField.frame, newPosition) {
-            runAction(SKAction.moveTo(newPosition, duration: 0.17))
+        if _scene.playField.frame.contains(newPosition) {
+            run(SKAction.move(to: newPosition, duration: 0.17))
         }
     }
 }

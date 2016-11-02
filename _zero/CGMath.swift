@@ -27,20 +27,20 @@ func +(l: CGPoint, r: CGFloat) -> CGPoint { return CGPoint(x: l.x + r, y: l.y + 
 func *(l: CGPoint, r: CGFloat) -> CGPoint { return CGPoint(x: l.x * r, y: l.y * r) }
 func /(l: CGPoint, r: CGFloat) -> CGPoint { return CGPoint(x: l.x / r, y: l.y / r) }
 
-func -=(inout l: CGPoint, r: CGPoint) { l = l - r }
-func +=(inout l: CGPoint, r: CGPoint) { l = l + r }
-func *=(inout l: CGPoint, r: CGPoint) { l = l * r }
-func /=(inout l: CGPoint, r: CGPoint) { l = l / r }
+func -=(l: inout CGPoint, r: CGPoint) { l = l - r }
+func +=(l: inout CGPoint, r: CGPoint) { l = l + r }
+func *=(l: inout CGPoint, r: CGPoint) { l = l * r }
+func /=(l: inout CGPoint, r: CGPoint) { l = l / r }
 
-func -=(inout l: CGPoint, r: CGSize) { l = l - r }
-func +=(inout l: CGPoint, r: CGSize) { l = l + r }
-func *=(inout l: CGPoint, r: CGSize) { l = l * r }
-func /=(inout l: CGPoint, r: CGSize) { l = l / r }
+func -=(l: inout CGPoint, r: CGSize) { l = l - r }
+func +=(l: inout CGPoint, r: CGSize) { l = l + r }
+func *=(l: inout CGPoint, r: CGSize) { l = l * r }
+func /=(l: inout CGPoint, r: CGSize) { l = l / r }
 
-func -=(inout l: CGPoint, r: CGFloat) { l = l - r }
-func +=(inout l: CGPoint, r: CGFloat) { l = l + r }
-func *=(inout l: CGPoint, r: CGFloat) { l = l * r }
-func /=(inout l: CGPoint, r: CGFloat) { l = l / r }
+func -=(l: inout CGPoint, r: CGFloat) { l = l - r }
+func +=(l: inout CGPoint, r: CGFloat) { l = l + r }
+func *=(l: inout CGPoint, r: CGFloat) { l = l * r }
+func /=(l: inout CGPoint, r: CGFloat) { l = l / r }
 
 extension CGPoint {
     init(x: CGFloat) {
@@ -51,10 +51,10 @@ extension CGPoint {
         self.x = 0
         self.y = y
     }
-    func with(x x: CGFloat) -> CGPoint {
+    func with(x: CGFloat) -> CGPoint {
         return CGPoint(x: x, y: y)
     }
-    func with(y y: CGFloat) -> CGPoint {
+    func with(y: CGFloat) -> CGPoint {
         return CGPoint(x: x, y: y)
     }
     func ceil() -> CGPoint {
@@ -88,15 +88,15 @@ func +(l: CGSize, r: CGFloat) -> CGSize { return CGSize(width: l.width + r, heig
 func *(l: CGSize, r: CGFloat) -> CGSize { return CGSize(width: l.width * r, height: l.height * r) }
 func /(l: CGSize, r: CGFloat) -> CGSize { return CGSize(width: l.width / r, height: l.height / r) }
 
-func -=(inout l: CGSize, r: CGSize) { l = l - r }
-func +=(inout l: CGSize, r: CGSize) { l = l + r }
-func *=(inout l: CGSize, r: CGSize) { l = l * r }
-func /=(inout l: CGSize, r: CGSize) { l = l / r }
+func -=(l: inout CGSize, r: CGSize) { l = l - r }
+func +=(l: inout CGSize, r: CGSize) { l = l + r }
+func *=(l: inout CGSize, r: CGSize) { l = l * r }
+func /=(l: inout CGSize, r: CGSize) { l = l / r }
 
-func -=(inout l: CGSize, r: CGFloat) { l = l - r }
-func +=(inout l: CGSize, r: CGFloat) { l = l + r }
-func *=(inout l: CGSize, r: CGFloat) { l = l * r }
-func /=(inout l: CGSize, r: CGFloat) { l = l / r }
+func -=(l: inout CGSize, r: CGFloat) { l = l - r }
+func +=(l: inout CGSize, r: CGFloat) { l = l + r }
+func *=(l: inout CGSize, r: CGFloat) { l = l * r }
+func /=(l: inout CGSize, r: CGFloat) { l = l / r }
 
 extension CGSize {
     init(width: CGFloat) {
@@ -107,8 +107,8 @@ extension CGSize {
         self.width = 0
         self.height = height
     }
-    func with(width width: CGFloat)  -> CGSize { return CGSize(width: width, height: height) }
-    func with(height height: CGFloat) -> CGSize { return CGSize(width: width, height: height) }
+    func with(width: CGFloat)  -> CGSize { return CGSize(width: width, height: height) }
+    func with(height: CGFloat) -> CGSize { return CGSize(width: width, height: height) }
     func ceil()  -> CGSize { return CGSize(width: CoreGraphics.ceil(width),  height: CoreGraphics.ceil(height))  }
     func floor() -> CGSize { return CGSize(width: CoreGraphics.floor(width), height: CoreGraphics.floor(height)) }
     func round() -> CGSize { return CGSize(width: CoreGraphics.round(width), height: CoreGraphics.round(height)) }
@@ -149,10 +149,10 @@ extension CGRect {
         self.origin = origin
         self.size = CGSize(width: width, height: height)
     }
-    func with(x x: CGFloat)      -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
-    func with(y y: CGFloat)      -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
-    func with(width width: CGFloat)  -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
-    func with(height height: CGFloat) -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
+    func with(x: CGFloat)      -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
+    func with(y: CGFloat)      -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
+    func with(width: CGFloat)  -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
+    func with(height: CGFloat) -> CGRect { return CGRect(x: x, y: y, width: width, height: height) }
     var x: CGFloat {
         get { return origin.x }
         set { origin.x = newValue }
@@ -207,7 +207,7 @@ extension CGRect {
 //
 
 extension CGRect {
-    func rectByInsetting(size size: CGSize) -> CGRect {
+    func rectByInsetting(size: CGSize) -> CGRect {
         return insetBy(dx: size.width, dy: size.height)
     }
 }
