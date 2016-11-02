@@ -8,7 +8,7 @@ This is a game developed using SpriteKit based on ["The Square"](http://www.less
 
 ## Support me
 
-[![](https://img.shields.io/gratipay/user/xyclos.svg?style=flat-square)]()
+[![Gratipay User](https://img.shields.io/gratipay/user/xyclos.svg?style=flat-square)]()
 
 ## Screenshots
 
