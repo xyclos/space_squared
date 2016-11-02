@@ -2,9 +2,13 @@
 
 This is a game developed using SpriteKit based on ["The Square"](http://www.lessmilk.com/game/the-square/) by [@lessmilk](https://github.com/lessmilk).
 
-
+## Play
 
 [Play Now](https://itunes.apple.com/us/app/space-zero/id1141164238)
+
+## Support me
+
+[![](https://img.shields.io/gratipay/user/xyclos.svg?style=flat-square)]()
 
 ## Screenshots
 
